@@ -976,7 +976,7 @@ def Load():
 
     global Combos, fname
 
-    filename = filedialog.askopenfile(mode='rb', title='Choose a Combo file',filetype=(("txt", "*.txt"), ("All files", "*.txt")))
+    filename = filedialog.askopenfile(mode='rb', title='Choose a Combo file',filetypes=(("Text files", "*.txt"), ("All files", "*.")))
 
     if filename is None:
 
@@ -1569,6 +1569,7 @@ def Main():
     input()
 
 Main()
+
 
 
 
