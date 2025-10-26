@@ -487,7 +487,9 @@ def authenticate(email, password, tries = 0):
 
 def Load():
     global Combos, fname
-    filename = filedialog.askopenfile(mode='rb', title='Choose a Combo file',filetype=(("txt", "*.txt"), ("All files", "*.txt")))
+    filename_path = input("Enter path to your combo .txt file: ")
+filename = open(filename_path, "rb")
+
     if filename is None:
         print(Fore.LIGHTRED_EX+"Invalid File.")
         time.sleep(2)
@@ -784,5 +786,6 @@ def Main():
     finishedscreen()
     input()
 Main()
+
 
 
