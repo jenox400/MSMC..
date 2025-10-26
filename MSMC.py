@@ -487,7 +487,20 @@ def authenticate(email, password, tries = 0):
 
 def Load():
     global Combos, fname
-    filename_path = input("Enter path to your combo .txt file: ")
+    from tkinter import Tk, filedialog
+
+root = Tk()
+root.withdraw()
+
+filename_path = filedialog.askopenfilename(
+    title="Select your combo .txt file",
+    filetypes=[("Text files", "*.txt"), ("All files", "*.*")]
+)
+
+if not filename_path:
+    print("No file selected.")
+    return
+
 filename = open(filename_path, "rb")
 
     if filename is None:
@@ -786,6 +799,7 @@ def Main():
     finishedscreen()
     input()
 Main()
+
 
 
 
